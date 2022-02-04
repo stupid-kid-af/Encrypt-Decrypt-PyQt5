@@ -6,6 +6,9 @@ A solution for encrypting and decrypting files built with PyQt5
 ## Run Locally
 
 Clone the project
+```bash
+  pip install pycryptodome cipher pyqt5
+```
 
 ```bash
   git clone https://github.com/stupid-kid-af/Encrypt-Decrypt-PyQt5.git
