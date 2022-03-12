@@ -11,6 +11,9 @@ setup(
     maintainer="Kyle Altendorf, Bryce Beagle, Florian Bruhin",
     maintainer_email="sda@fstab.net",
     description=" PyQt5 framework",
+    data_dir = os.path.join(sys.prefix, "local/lib/python2.7/dist-package/my_module")
+    data_files   = [ ("my_module",  [os.path.join(data_dir, "ui"),
+                                 os.path.join(data_dir, "application.py", "cipher.py")])]
 
 
     classifiers=[
