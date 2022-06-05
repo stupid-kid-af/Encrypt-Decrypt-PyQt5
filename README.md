@@ -2,6 +2,7 @@
 # Encrypt-Decrypt-PyQt5
 
 A solution for encrypting and decrypting files built with PyQt5
+Check release for AppImage!
 
 sudo docker run --rm --runtime=runc --interactive --env=DISPLAY=$DISPLAY --env=QT_X11_NO_MITSHM=1 --volume=/tmp/.X11-unix:/tmp/.X11-unix:rw enc
 
