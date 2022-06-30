@@ -1,17 +1,30 @@
+# This is an example PKGBUILD file. Use this as a start to creating your own,
+# and remove these comments. For more information, see 'man PKGBUILD'.
+# NOTE: Please fill out the license field for your package! If it is unknown,
+# then please put 'unknown'.
 
-pkgname=Encd
+# Maintainer: Your Name <youremail@domain.com>
+pkgname=Encrypt-Decrypt-PyQt5
 pkgver=1.0
 pkgrel=1
-pkgdesc="Encryption-De"
-arch=("any")
+arch=(x86_64)
 url="https://github.com/stupid-kid-af/Encrypt-Decrypt-PyQt5"
-license=("GPL3")
-makedepends=('python-setuptools')
+license=('MIT')
+provides=(encd)
+install=
+source=("git+$url")
+noextract=()
+md5sums=('SKIP')
+validpgpkeys=()
 
 build() {
-    python setup.py build
+	cd Encrypt-Decrypt-PyQt5
+	pyinstaller --onefile --windowed application.py
 }
-
 package() {
-    python setup.py install --root="$pkgdir" --optimize=1
+	cd Encrypt-Decrypt-PyQt5
+        cd dist
+        mv application "$pkgname"
+        install -Dm755 ./"$pkgname" "$pkgdir/usr/bin/$pkgname"
+
 }
